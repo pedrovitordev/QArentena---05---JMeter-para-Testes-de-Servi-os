@@ -15,7 +15,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="host" elementType="Argument">
             <stringProp name="Argument.name">host</stringProp>
-            <stringProp name="Argument.value">wsf.cdyne.com</stringProp>
+            <stringProp name="Argument.value">ws.correios.com.br</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
             <stringProp name="Argument.desc">Host of Webservice</stringProp>
           </elementProp>
@@ -40,10 +40,10 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">2</stringProp>
+          <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">5</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">5</stringProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <longProp name="ThreadGroup.start_time">1375525852000</longProp>
         <longProp name="ThreadGroup.end_time">1375525852000</longProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
@@ -58,11 +58,14 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">&lt;soap:Envelope xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;&#xd;
+                <stringProp name="Argument.value">&lt;soap:Envelope xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&#xd;
+xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;&#xd;
   &lt;soap:Body&gt;&#xd;
-    &lt;GetCityForecastByZIP xmlns=&quot;http://ws.cdyne.com/WeatherWS/&quot;&gt;&#xd;
-      &lt;ZIP&gt;60601&lt;/ZIP&gt;&#xd;
-    &lt;/GetCityForecastByZIP&gt;&#xd;
+    &lt;CalcPrazo xmlns=&quot;http://tempuri.org/&quot;&gt;&#xd;
+      &lt;nCdServico&gt;04014&lt;/nCdServico&gt;&#xd;
+      &lt;sCepOrigem&gt;04274050&lt;/sCepOrigem&gt;&#xd;
+      &lt;sCepDestino&gt;01310000&lt;/sCepDestino&gt;&#xd;
+    &lt;/CalcPrazo&gt;&#xd;
   &lt;/soap:Body&gt;&#xd;
 &lt;/soap:Envelope&gt;</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -73,7 +76,7 @@
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/WeatherWS/Weather.asmx</stringProp>
+          <stringProp name="HTTPSampler.path">/calculador/calcprecoprazo.asmx</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
